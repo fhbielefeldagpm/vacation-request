@@ -1,4 +1,4 @@
-[camaframelogo](CaMaFrameUrlaubsantrag/src/main/webapp/VAADIN/CamaFrameLogo_transparent.png)
+[](CaMaFrameUrlaubsantrag/src/main/webapp/VAADIN/CamaFrameLogo_transparent.png)
 
 # Installation Instructions for the „Vacation Request“ („Urlaubsantrag“) Example
 
