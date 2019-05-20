@@ -1,0 +1,142 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.camaframe</groupId>
+	<artifactId>CaMaFrameUrlaubsantrag</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>Urlaubsantrag CaMaFrame</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<vaadin.version>8.4.2</vaadin.version>
+		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-server</artifactId>
+			<version>${vaadin.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-client-compiled</artifactId>
+			<version>${vaadin.version}</version>
+		</dependency>
+		<!-- Needed when using the widgetset optimizer (custom ConnectorBundleLoaderFactory). 
+			For widgetset compilation, vaadin-client-compiler is automatically added 
+			on the compilation classpath by vaadin-maven-plugin so normally there is 
+			no need for an explicit dependency. -->
+
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-client-compiler</artifactId>
+			<version>${vaadin.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-client</artifactId>
+			<version>${vaadin.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-push</artifactId>
+			<version>${vaadin.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-themes</artifactId>
+			<version>${vaadin.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-cdi</artifactId>
+			<!--<version>2.0-SNAPSHOT</version> -->
+			<version>3.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.enterprise</groupId>
+			<artifactId>cdi-api</artifactId>
+			<version>1.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.tomee</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>8.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.annotation</groupId>
+			<artifactId>javax.annotation-api</artifactId>
+			<version>1.2-b01</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.39</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>eclipselink</artifactId>
+			<version>2.6.4</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.tomee</groupId>
+			<artifactId>openejb-core</artifactId>
+			<version>8.0.0-M1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.johnzon</groupId>
+			<artifactId>johnzon-jaxrs</artifactId>
+			<version>1.1.11</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-core -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-core</artifactId>
+			<version>3.1.15</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-frontend-jaxrs -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
+			<version>3.1.15</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-transports-http -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>3.1.15</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.4.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>
