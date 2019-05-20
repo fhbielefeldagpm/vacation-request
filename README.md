@@ -9,6 +9,12 @@ The example application „Vacation Request“ is pre-configured for a MySQL con
 *	[TomEE PLuME 7.1.0](http://tomee.apache.org/download-ng.html) (built on an Apache Tomcat Version 8.5.32)
 *	JRE/JDK 1.8.0_211
 
+# CMMN Case Model "Vacation Request" ("Urlaubsantrag")
+
+The example application realizes the CMMN case model shown below. There are two HumanTasks: One to enter an employee's vacation request data, the other to examine and approve or reject it. Two ProcessTasks are used; one notifies the employee based of the outcome, the other updates the requester's holiday account if the request has been approved. Data of the request and for steering the case is modeled as properties of the CaseFileItem "Urlaubsantrag" ("vacation request").
+
+![casemodel](einfacher_urlaubsantrag_denglisch.png)
+
 Several steps are necessary to run the example. You can either check out the project from here or download the pre-packaged TomEE-distribution from [the project website](https://www.fh-bielefeld.de/wug/forschung/ag-pm/cama-frame). You will need to set up a database and run a JUnit test class to run the example.
 
 ## **1.	Import the project:**
