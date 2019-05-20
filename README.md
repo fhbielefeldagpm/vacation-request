@@ -35,8 +35,9 @@ _**Note: Should you want to change the name of the persistence unit, you have to
 Once your database is available, run the class /CaMaFrameUrlaubsantrag/src/test/java/ResetDataBaseTest.java as a JUnit test. You can watch the table structure being built and the two users being persisted in your console (entries marked with [EL] for EclipseLink).
 
 ## **4.	Start TomEE:**
-a.	If you have **not** changed the database configuration: After you have prepared your database and run the JUnit test class, you can start the application server. If you are not using the bundled distribution, create a deployable .war file from your project and deploy it on the server by copying the file to tomee\webapps\.
-b.	If you **have** changed the database configuration: Undeploy any previous version of the application example in tomee\webapps\ including any .war-files. Compile the project and create a deployable .war-file. Copy it to tomee\webapps\. You should be able to see the deployment being automatically picked up by TomEE in its console.
+*	If you have **not** changed the database configuration: After you have prepared your database and run the JUnit test class, you can start the application server. If you are not using the bundled distribution, create a deployable .war file from your project and deploy it on the server by copying the file to tomee\webapps\.
+
+*	If you **have** changed the database configuration: Undeploy any previous version of the application example in tomee\webapps\ including any .war-files. Compile the project and create a deployable .war-file. Copy it to tomee\webapps\. You should be able to see the deployment being automatically picked up by TomEE in its console.
 
 ## **5.	Access the example application:**
 You can now access the example application at URL http://localhost:8080/Urlaubsantrag/welcome. There are two logins available (which were created by running the JUnit test class):
