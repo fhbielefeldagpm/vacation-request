@@ -24,9 +24,13 @@ You can import the project via a git plugin or the downloaded project archive in
 Create a MySQL-Database named „urlaubsantrag“ ("vacation request"). The schema is generated with the help of JPA and by running a JUnit test class. As a JDBC-URL „jdbc:mysql://localhost:3306/urlaubsantrag“ is pre-configured.
 
 This configuration can be changed in two places:
+
 a)	In the persistence.xml (see /CaMaFrameUrlaubsantrag/src/main/java/META-INF/persistence.xml) of the project
+
 b)	In the TomEE application server (see tomee\conf\server.xml)
+
 In a) the  <persistence-unit name="urlaubsantragLocal"> is defined. It contains login data and is configured as an application-managed EntityManager which is used in the aforementioned JUnit test class.
+  
 In b) an application server managed resource is configured as <Resource name="urlaubsantrag" > which will later be used by the example. It is also referenced in a) as  <persistence-unit name="urlaubsantrag"> and contains login data and the URL for your database setup.
 
 _**Note: Should you want to change the name of the persistence unit, you have to change the name accordingly in the class found at /CaMaFrameUrlaubsantrag/src/main/java/cm/core/utils/PersistenceSettings.java and follow the instructions in 4b) below.**_
