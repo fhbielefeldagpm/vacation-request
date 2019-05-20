@@ -43,3 +43,5 @@ You can now access the example application at URL http://localhost:8080/Urlaubsa
 
 *	„John Admin“ user/pass: admin/admin (has role: pruefer)
 *	„Jane Worker“ user/pass: worker/worker (has role: bearbeiter)
+
+The worker account can enter the request data while the admin account can verify the request. Included are two simple graphical user interfaces to view case instances and task instances. Please note to select a task in the grid first before starting it.
