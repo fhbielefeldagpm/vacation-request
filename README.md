@@ -33,7 +33,7 @@ In a) the `<persistence-unit name="urlaubsantragLocal">` is defined. It contains
   
 In b) an application server managed resource is configured as `<Resource name="urlaubsantrag" >` which will later be used by the example. It is also referenced in a) as  `<persistence-unit name="urlaubsantrag">` and contains login data and the URL for your database setup.
 
-_**Note: Should you want to change the name of the persistence unit, you have to change the name accordingly in the class found at /CaMaFrameUrlaubsantrag/src/main/java/cm/core/utils/PersistenceSettings.java and follow the instructions in 4b) below.**_
+_**Note: Should you want to change the name of the persistence unit, you have to change the name accordingly in the class found at /CaMaFrameUrlaubsantrag/src/main/java/cm/core/utils/PersistenceSettings.java and follow the instructions below.**_
 
 ## **3.	Run the JUnit test class:**
 Once your database is available, run the class `/CaMaFrameUrlaubsantrag/src/test/java/ResetDataBaseTest.java` as a JUnit test. You can watch the table structure being built and the two users being persisted in your console (entries marked with [EL] for EclipseLink).
