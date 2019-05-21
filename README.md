@@ -21,7 +21,7 @@ Several steps are necessary to run the example. You can either check out the pro
 You can import the project via a git plugin or the downloaded project archive in Eclipse via File -> Import… and „Import Projects from Folder or Archive“ as a Maven project.
 
 ## **2.	Prepare the database:**
-Create a MySQL-Database named „urlaubsantrag“ ("vacation request"). The schema is generated with the help of JPA and by running a JUnit test class. As a JDBC-URL „jdbc:mysql://localhost:3306/urlaubsantrag“ is pre-configured.
+Create a MySQL-Database named „urlaubsantrag“ ("vacation request"). The schema is generated with the help of JPA and by running a JUnit test class. As a JDBC-URL `jdbc:mysql://localhost:3306/urlaubsantrag` is pre-configured.
 
 This configuration can be changed in two places:
 
