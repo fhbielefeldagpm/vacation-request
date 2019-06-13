@@ -31,7 +31,7 @@ import javax.ws.rs.core.MediaType;
 import cm.core.CaseModel;
 import cm.core.CaseStates;
 import cm.core.CaseWorker;
-import cm.core.Element;
+import cm.core.CaseElement;
 import cm.core.Stage;
 import cm.core.services.CaseService;
 import cm.core.services.commands.casemodel.CaseModelTransitionCommand;
@@ -145,9 +145,9 @@ public class CaseServiceImpl implements CaseService {
 	}
 	
 	private void removeElementsInStage(Stage s) {
-		List<Element> stageChildElements = s.getChildElements();
+		List<CaseElement> stageChildElements = s.getChildElements();
 		for (int i = 0; i < stageChildElements.size(); i++)	{
-			Element child = stageChildElements.get(i);
+			CaseElement child = stageChildElements.get(i);
 			if(child instanceof Stage) {
 				removeElementsInStage((Stage)child);
 			} else if (child instanceof CaseTask) {
@@ -183,11 +183,11 @@ public class CaseServiceImpl implements CaseService {
 	}
 
 	@Override
-	public List<Element> getElementsInCase(CaseModel cm) {
-		TypedQuery<Element> query = em.createQuery("SELECT e FROM Element e WHERE e.rootCase.id= :caseId",
-				Element.class);
+	public List<CaseElement> getElementsInCase(CaseModel cm) {
+		TypedQuery<CaseElement> query = em.createQuery("SELECT e FROM Element e WHERE e.rootCase.id= :caseId",
+				CaseElement.class);
 		query.setParameter("caseId", cm.getId());
-		List<Element> elementsFound = query.getResultList();
+		List<CaseElement> elementsFound = query.getResultList();
 		return elementsFound;
 	}
 
