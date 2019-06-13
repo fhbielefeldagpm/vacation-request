@@ -31,7 +31,7 @@ import javax.ws.rs.core.MediaType;
 import cm.core.CaseModel;
 import cm.core.CaseStates;
 import cm.core.CaseWorker;
-import cm.core.CaseElement;
+import cm.core.Element;
 import cm.core.Stage;
 import cm.core.services.CaseService;
 import cm.core.services.commands.casemodel.CaseModelTransitionCommand;
@@ -67,11 +67,13 @@ public class CaseServiceImpl implements CaseService {
 	@Override
 	public List<CaseModel> getPrimaryCases(String state) {
 		TypedQuery<CaseModel> query = null;
-		if(state != null) {
+		if (!state.equals("all")) {
 			query = em.createQuery("SELECT c FROM CaseModel c WHERE c.caseTaskRef IS NULL AND c.state = :state",
 					CaseModel.class);
-			query.setParameter("state", state);
-		} else {
+			if (state != null) {
+				query.setParameter("state", state);
+			}
+		} else if (state.equals("all")) {
 			query = em.createQuery("SELECT c FROM CaseModel c WHERE c.caseTaskRef IS NULL",
 					CaseModel.class);
 		}
@@ -115,6 +117,7 @@ public class CaseServiceImpl implements CaseService {
 		TypedQuery<CaseModel> query = em.createQuery("SELECT c FROM CaseModel c WHERE c.id = :caseId", CaseModel.class);
 		query.setParameter("caseId", cm.getId());
 		CaseModel fetchedCase = query.getSingleResult();
+		em.refresh(fetchedCase);
 		em.remove(fetchedCase);
 //		if (fetchedCase != null) {
 //
@@ -142,9 +145,9 @@ public class CaseServiceImpl implements CaseService {
 	}
 	
 	private void removeElementsInStage(Stage s) {
-		List<CaseElement> stageChildElements = s.getChildElements();
+		List<Element> stageChildElements = s.getChildElements();
 		for (int i = 0; i < stageChildElements.size(); i++)	{
-			CaseElement child = stageChildElements.get(i);
+			Element child = stageChildElements.get(i);
 			if(child instanceof Stage) {
 				removeElementsInStage((Stage)child);
 			} else if (child instanceof CaseTask) {
@@ -180,11 +183,11 @@ public class CaseServiceImpl implements CaseService {
 	}
 
 	@Override
-	public List<CaseElement> getElementsInCase(CaseModel cm) {
-		TypedQuery<CaseElement> query = em.createQuery("SELECT e FROM Element e WHERE e.rootCase.id= :caseId",
-				CaseElement.class);
+	public List<Element> getElementsInCase(CaseModel cm) {
+		TypedQuery<Element> query = em.createQuery("SELECT e FROM Element e WHERE e.rootCase.id= :caseId",
+				Element.class);
 		query.setParameter("caseId", cm.getId());
-		List<CaseElement> elementsFound = query.getResultList();
+		List<Element> elementsFound = query.getResultList();
 		return elementsFound;
 	}
 
