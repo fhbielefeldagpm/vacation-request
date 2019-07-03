@@ -217,7 +217,7 @@ public class CaseListView extends CustomComponent implements View {
 	}
 
 	private void updatePrimaryCases() {
-		Collection<CaseModel> items = this.caseService.getPrimaryCases(null);
+		Collection<CaseModel> items = this.caseService.getPrimaryCases("all");
 		this.gridPrimaryCases.setItems(items);
 		this.gridPrimaryCases.deselectAll();
 		this.selectedPrimaryCase = null;
